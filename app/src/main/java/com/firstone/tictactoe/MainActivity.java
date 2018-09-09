@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     int chance=0;
-    int x=0;
     int state[]={2,2,2,2,2,2,2,2,2};
     int winstates [][]= {{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
 
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         for(int i=0; i<state.length;i++)
             state[i]=2;
-        GridLayout gridLayout = (GridLayout) findViewById(R.id.grid);
+        android.support.v7.widget.GridLayout gridLayout = (android.support.v7.widget.GridLayout) findViewById(R.id.grid);
         for(int i=0; i<gridLayout.getChildCount();i++)
         {
            ImageView img= (ImageView)gridLayout.getChildAt(i);
