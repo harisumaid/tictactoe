@@ -114,8 +114,7 @@
         android:id="@+id/playagain"
         android:layout_width="239dp"
         android:layout_height="154dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:background="@android:color/holo_blue_dark"
         android:gravity="center_horizontal|center|clip_horizontal"
         android:orientation="vertical"
@@ -137,6 +136,37 @@
             android:onClick="reset"
             android:text="PLAY AGAIN" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:text="SCOREBOARD"
+        android:textAlignment="center"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/player1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:text="PLAYER 1 : 0"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/player2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:text="PLAYER 2 : 0"
+        android:textSize="30sp" />
 
 
 </RelativeLayout>
