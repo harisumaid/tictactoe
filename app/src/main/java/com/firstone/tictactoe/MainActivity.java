@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     int chance=0;
     int score1=0;
     int score2=0;
-    int check=0;
+    int check=1;
     int state[]={2,2,2,2,2,2,2,2,2};
     int winstates [][]= {{0,1,2},{3,4,5},{6,7,8},{0,3,6},{1,4,7},{2,5,8},{0,4,8},{2,4,6}};
 
@@ -41,11 +41,10 @@ public class MainActivity extends AppCompatActivity {
         TextView player1=(TextView) findViewById(R.id.player1);
         TextView player2=(TextView) findViewById(R.id.player2);
 
-        if (check!=9) {
+        if (check<=9) {
             ImageView game = (ImageView) view;
             if (state[Integer.parseInt(String.valueOf(game.getTag()))] == 2) {
-                game.setScaleX(0f);
-                game.setScaleY(0f);
+
 
                 state[Integer.parseInt(String.valueOf(game.getTag()))] = chance;
                 if (chance == 0) {
@@ -55,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                     game.setImageResource(R.drawable.cross);
                     chance = 0;
                 }
+                game.setScaleX(0f);
+                game.setScaleY(0f);
                 game.animate().rotation(360)
                         .scaleX(1f)
                         .scaleY(1f)
@@ -76,21 +77,24 @@ public class MainActivity extends AppCompatActivity {
                         winnermessage.setText("Player 2 won !!!!");
                         score2++;
                     }
+                    player1.setText("PLAYER 1 :"+ score1);
+                    player2.setText("PLAYER 2 :"+ score2);
                     LinearLayout layout = (LinearLayout) findViewById(R.id.playagain);
                     layout.setVisibility(View.VISIBLE);
+                    check=11;
                 }
-                player1.setText("PLAYER 1 :"+ score1);
-                player2.setText("PLAYER 2 :"+ score2);
+
             }
 
             check++;
+            if(check==10) {
+                LinearLayout layout = (LinearLayout) findViewById(R.id.playagain);
+                TextView winnermessage =(TextView) findViewById(R.id.winnermessage);
+                winnermessage.setText("Match Draw !!!!");
+                layout.setVisibility(View.VISIBLE);
+            }
         }
-        else if (check==9){
-            LinearLayout layout = (LinearLayout) findViewById(R.id.playagain);
-            TextView winnermessage =(TextView) findViewById(R.id.winnermessage);
-            winnermessage.setText("Match Draw !!!!");
-            layout.setVisibility(View.VISIBLE);
-        }
+
     }
 
 
