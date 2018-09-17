@@ -3,7 +3,6 @@ package com.firstone.tictactoe;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -56,11 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 }
                 game.setScaleX(0f);
                 game.setScaleY(0f);
+                game.setRotation(0f);
                 game.animate().rotation(360)
                         .scaleX(1f)
                         .scaleY(1f)
                         .setDuration(500);
             } else {
+                check--;
                 Toast.makeText(this, "box already filled !!!! ", Toast.LENGTH_SHORT).show();
             }
 
